@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Feed from './components/Feed';
+import Navbar from './components/Navbar';
+import Rightbar from './components/Rightbar';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Stack direction="row">
+        <Box flex={2} p={2}>
+          <Sidebar />
+        </Box>
+        <Box flex={5} p={2}>
+          <Feed />
+        </Box>
+        <Box flex={3} p={2}>
+          <Rightbar />
+        </Box>
+      </Stack>
+    </>
   );
 }
 
